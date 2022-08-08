@@ -1,5 +1,5 @@
 import React from 'react';
-import { Counter } from './features/counter/Counter';
+//import { Counter } from './features/counter/Counter';
 import { Routes, Route } from 'react-router-dom';
 import ContactPage from './pages/ContactPage';
 import HomePage from './pages/HomePage';
@@ -9,8 +9,15 @@ import CampsitesDirectoryPage from './pages/CampsitesDirectoryPage';
 import CampsiteDetailPage from './pages/CampsiteDetailPage';
 import './App.css';
 import AboutPage from './pages/AboutPage';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchCampsites } from '../src/features/campsites/campsitesSlice'; 
 
 function App() {
+
+    const dispatch = useDispatch();
+
+    useEffect(() => { dispatch(fetchCampsites());}, [dispatch]);
 
     return (
         <div className='App'>
