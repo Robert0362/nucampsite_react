@@ -12,12 +12,18 @@ import AboutPage from './pages/AboutPage';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchCampsites } from '../src/features/campsites/campsitesSlice'; 
+import { fetchPartners } from '../src/features/partners/partnersSlice';
+import { fetchPromotions } from '../src/features/promotions/promotionsSlice';
 
 function App() {
 
     const dispatch = useDispatch();
 
-    useEffect(() => { dispatch(fetchCampsites());}, [dispatch]);
+    useEffect(() => { 
+        dispatch(fetchCampsites());
+        dispatch(fetchPartners());
+        dispatch(fetchPromotions());
+    }, [dispatch]);
 
     return (
         <div className='App'>
