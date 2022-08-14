@@ -25,7 +25,7 @@ const partnersSlice = createSlice ({
     name:'partners',
     initialState,
     reducers: {},
-        extraReducers: {
+    extraReducers: {
             [fetchPartners.pending]: (state) => {
                 state.isLoading = true;
             },
